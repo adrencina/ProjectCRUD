@@ -3,6 +3,14 @@ package com.example.projectcrud
 class ProductRepository {
     private val products = mutableListOf<Product>()
 
+    fun getProducts(): List<Product> {
+        return products
+    }
+
+    fun getProductById(id: Int): Product? {
+        return products.find { it.id == id }
+    }
+
     fun addProduct(product: Product) {
         products.add(product)
     }
