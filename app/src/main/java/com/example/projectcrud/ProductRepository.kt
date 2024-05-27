@@ -1,11 +1,11 @@
 package com.example.projectcrud
 
-class ProductRepository {
+//class ProductRepository {
     object ProductRepository {
         private val products = mutableListOf<Product>()
 
         fun addProduct(product: Product) {
-            product.add(product)
+            products.add(product)
         }
 
         fun deleteProduct(productName: String): Boolean {
@@ -17,13 +17,13 @@ class ProductRepository {
                 false
             }
         }
-    }
 
     fun getProducts(): List<Product> {
-        return Product
+        return products
     }
-
-
 }
+
+
+//}
 
 

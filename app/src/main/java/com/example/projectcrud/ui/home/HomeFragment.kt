@@ -13,15 +13,18 @@ import com.example.projectcrud.R
 import com.example.projectcrud.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     private val productViewModel: HomeViewModel by viewModels()
-    private lateinit var productAdapter: ProductAdapter
 
-    private var _binding: FragmentHomeBinding? = null
+    //private lateinit var productAdapter: ProductAdapter
+
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-    private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,36 +41,31 @@ class HomeFragment : Fragment() {
         //homeViewModel.text.observe(viewLifecycleOwner) {
             //textView.text = it
         //}
+
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        productViewModel.products.observe(viewLifecycleOwner) { products ->
-            when (products) {
-                is StateHomeViewModel.Success -> {
-                    initRecyclerView(products.info.message ?: listOf())
-                }
-
-                is StateHomeViewModel.Error -> {
-                    Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-
-        // Fetch the products from the API
         productViewModel.getProducts()
 
+        val productAdapter = ProductAdapter()
+        binding.rvHome.adapter = productAdapter
+
+        productViewModel.products.observe(viewLifecycleOwner) { products ->
+            productAdapter.setList(products)
         }
 
-        // Observe the products from the ViewModel
+        //productViewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+        //}
+
+        productViewModel.error.observe(viewLifecycleOwner) { error ->
+            Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
+        }
 
 
-    private fun initRecyclerView(value: List<String>) {
-        val adapter = ProductAdapter(value)
-        binding.rvHome.adapter = adapter
-    }
+        }
 
     override fun onDestroyView() {
         super.onDestroyView()

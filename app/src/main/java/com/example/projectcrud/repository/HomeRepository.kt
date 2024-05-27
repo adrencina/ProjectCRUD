@@ -5,7 +5,7 @@ import com.example.projectcrud.ui.home.ProductResponse
 import retrofit2.Response
 
 class HomeRepository(private val service: HomeServiceImp = HomeServiceImp()) {
-    suspend fun getProducts(): Response<ProductResponse> {
+    suspend fun getProducts(): List<ProductResponse> {
         return service.getProducts()
     }
 }

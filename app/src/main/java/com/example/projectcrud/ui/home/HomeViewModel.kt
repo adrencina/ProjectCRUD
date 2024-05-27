@@ -17,19 +17,27 @@ class HomeViewModel(private val repository: HomeRepository = HomeRepository()) :
     //}
     //val text: LiveData<String> = _text
 
-    private val _products = MutableLiveData<StateHomeViewModel>()
-    val products: LiveData<StateHomeViewModel> = _products
+    private val _products = MutableLiveData<List<ProductResponse>>()
+    val products: LiveData<List<ProductResponse>> = _products
+
+    //private val _isLoading = MutableLiveData<Boolean>()
+    //val isLoading: LiveData<Boolean> = _isLoading
+
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> = _error
 
     fun getProducts() {
         CoroutineScope(Dispatchers.IO).launch {
-            val response = repository.getProducts()
-            if (response.isSuccessful) {
-                response.body()?.let {
-                    _products.postValue(StateHomeViewModel.Success(it))
-                } ?: _products.postValue(StateHomeViewModel.Error("No data"))
-            } else {
-                _products.postValue(StateHomeViewModel.Error("Service error"))
+            //_isLoading.value = true
+            try {
+                _products.value = repository.getProducts()
+            } catch (e: Exception) {
+                _error.value = e.message
             }
+            //_isLoading.value = false
         }
     }
+
+
+
 }

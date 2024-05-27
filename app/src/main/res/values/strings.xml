@@ -17,4 +17,11 @@
     <string name="nombre">Nombre del producto</string>
     <string name="delete_product">Delete Product</string>
     <string name="eliminar_producto">Eliminar Producto</string>
+    <string name="item_que_se_muestra_en_home">Imagen Producto</string>
+    <string name="texto_price">Price: $100.00:</string>
+    <string name="texto_id">ID:</string>
+    <string name="texto_descripcion_producto">Descripción del Producto</string>
+    <string name="texto_nombre_producto">Nombre del Producto</string>
+    <string name="hello_blank_fragment">Hello Blank Fragment</string>
+    <string name="texto_search_view">Search...</string>
 </resources>

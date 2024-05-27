@@ -11,9 +11,9 @@ class HomeServiceImp {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    private val serviceProduct = retrofit.create<HomeService>()
+    private val serviceProduct = retrofit.create(HomeService::class.java)
 
-    suspend fun getProducts(): Response<ProductResponse> {
+    suspend fun getProducts(): List<ProductResponse> {
         return serviceProduct.getProducts()
     }
 }

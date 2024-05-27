@@ -23,16 +23,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/sv_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="Buscar..."
+        android:queryHint="@string/texto_search_view"
         android:layout_margin="20dp"
         app:layout_constraintBottom_toTopOf="@+id/rv_home"
         app:layout_constraintTop_toBottomOf="@+id/text_home"
-        android:background="@color/purple_200"
-        />
+        android:background="@color/purple_200" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home"
@@ -46,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_home"
-        app:listitem="@layout/item_rv_home"
+        tools:listitem="layout/item_rv_home"
         android:background="@color/purple_200"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

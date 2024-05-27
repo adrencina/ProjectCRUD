@@ -3,41 +3,50 @@ package com.example.projectcrud.ui.home
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectcrud.R
 import com.example.projectcrud.databinding.ItemRvHomeBinding
 import com.example.projectcrud.model.Product
 import com.squareup.picasso.Picasso
 
-class ProductAdapter(private val productList: List<String>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
-    private val products = mutableListOf<Product>()
+class ProductAdapter : ListAdapter<ProductResponse, ProductAdapter.ProductViewHolder>(ProductDiffCallback()) {
 
+    private val productList = mutableListOf<ProductResponse>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        val binding = LayoutInflater.from(parent.context).inflate(R.layout.item_rv_home,parent,false)
+        val binding = ItemRvHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ProductViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.render(productList[position])
+        val product = getItem(position)
+        holder.bind(product)
     }
 
-    override fun getItemCount(): Int {
-        return productList.size
-    }
-
-    fun updateProducts(newProducts: List<Product>) {
-        products.clear()
-        products.addAll(newProducts)
+    fun setList(products: List<ProductResponse>) {
+        productList.clear()
+        productList.addAll(products)
         notifyDataSetChanged()
     }
 
-    class ProductViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ProductViewHolder(private val binding: ItemRvHomeBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(product: ProductResponse) {
+            binding.idCard.text = product.id.toString()
+            binding.textCard.text = product.title
+            binding.descriptionCard.text = product.description
+            Picasso.get().load(product.images.firstOrNull())
+                .into(binding.imgCard)
+        }
+    }
 
-        private val binding = ItemRvHomeBinding.bind(view)
+    class ProductDiffCallback : DiffUtil.ItemCallback<ProductResponse>() {
+        override fun areItemsTheSame(oldItem: ProductResponse, newItem: ProductResponse): Boolean {
+            return oldItem.id == newItem.id
+        }
 
-        fun render(value: String){
-            Picasso.get().load(value).into(binding.imgHome)
-
+        override fun areContentsTheSame(oldItem: ProductResponse, newItem: ProductResponse): Boolean {
+            return oldItem == newItem
         }
     }
 }

@@ -57,21 +57,21 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-    class MainActivity : AppCompatActivity() {
-
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
-
-            if (savedInstanceState == null) {
-                return
-            }
-            val addFragment = AddFragment()
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.fragment_container, addFragment)
-                    .commit()
-            }
-        }
     }
+    //class MainActivity : AppCompatActivity() {
 
-}
+        //override fun onCreate(savedInstanceState: Bundle?) {
+            //super.onCreate(savedInstanceState)
+            //setContentView(R.layout.activity_main)
+
+            //if (savedInstanceState == null) {
+                //return
+            //}
+            //val addFragment = AddFragment()
+            //supportFragmentManager.beginTransaction()
+            //.add(R.id.fragment_container, addFragment)
+            //.commit()
+            //}
+        //}
+
+
