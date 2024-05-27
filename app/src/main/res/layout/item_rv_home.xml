@@ -18,11 +18,11 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
+            android:src="@drawable/ic_launcher_background"
             android:id="@+id/img_home"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:contentDescription="@string/item_que_se_muestra_en_home"
-            android:backgroundTint="@color/purple_200"
             android:scaleType="centerCrop" />
 
     </androidx.cardview.widget.CardView>
