@@ -1,4 +1,6 @@
-package com.example.projectcrud
+package com.example.projectcrud.repository
+
+import com.example.projectcrud.model.Product
 
 class ProductRepository {
     private val products = mutableListOf<Product>()

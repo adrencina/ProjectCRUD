@@ -11,14 +11,17 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_nav_home_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
             android:id="@+id/action_nav_home_to_nav_gallery"
             app:destination="@id/nav_gallery" />
         <action
             android:id="@+id/action_nav_home_to_nav_slideshow"
             app:destination="@id/nav_slideshow" />
+        <action
+            android:id="@+id/action_nav_home_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_deleteFragment"
+            app:destination="@id/deleteFragment" />
     </fragment>
 
     <fragment
@@ -33,20 +36,9 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" >
         <action
-            android:id="@+id/action_nav_slideshow_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_nav_slideshow_to_addFragment"
-            app:destination="@id/addFragment" />
-        <action
             android:id="@+id/action_nav_slideshow_to_deleteFragment"
             app:destination="@id/deleteFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.projectcrud.HomeFragment"
-        android:label="fragment_home2"
-        tools:layout="@layout/fragment_home2" />
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.projectcrud.AddFragment"

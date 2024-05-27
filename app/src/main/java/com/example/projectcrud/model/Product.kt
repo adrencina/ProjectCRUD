@@ -1,4 +1,4 @@
-package com.example.projectcrud
+package com.example.projectcrud.model
 
 // Clase de datos para representar productos
 data class Product (
