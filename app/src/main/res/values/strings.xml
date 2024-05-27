@@ -14,7 +14,8 @@
     <string name="descripcion">Descripción</string>
     <string name="nombre_del_producto">Nombre del producto</string>
     <string name="añadir">Añadir</string>
-    <string name="nombre">Nombre del producto</string>
+    <string name="iddelete">ID del producto</string>
     <string name="delete_product">Delete Product</string>
     <string name="eliminar_producto">Eliminar Producto</string>
+    <string name="imagen_producto">Imagen del producto</string>
 </resources>

@@ -2,7 +2,7 @@ package com.example.projectcrud.repository
 
 import com.example.projectcrud.model.Product
 
-class ProductRepository {
+object ProductRepository {
     private val products = mutableListOf<Product>()
 
     fun getProducts(): List<Product> {
@@ -24,8 +24,10 @@ class ProductRepository {
         }
     }
 
-    fun deleteProduct(id: Int) {
+    fun deleteProduct(id: Int): Boolean {
+        val initialSize = products.size
         products.removeAll { it.id == id }
+        return products.size < initialSize
     }
 
 }

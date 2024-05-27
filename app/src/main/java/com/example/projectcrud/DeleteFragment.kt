@@ -1,10 +1,15 @@
 package com.example.projectcrud
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import com.example.projectcrud.repository.ProductRepository
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,24 +34,46 @@ class DeleteFragment : Fragment() {
         }
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_delete, container, false)
+        // Inflar el layout para este fragmento
+        val view = inflater.inflate(R.layout.fragment_delete, container, false)
+
+        // Obtener referencias a los elementos de la UI
+        val productIdToDeleteEditText: EditText = view.findViewById(R.id.et_id_delete)
+        val deleteProductButton: Button = view.findViewById(R.id.btn_delete_product)
+
+        // Configurar el listener para el botón
+        deleteProductButton.setOnClickListener {
+            val productIdText = productIdToDeleteEditText.text.toString().trim()
+
+            if (productIdText.isNotEmpty()) {
+                val productId = productIdText.toIntOrNull()
+
+                if (productId != null) {
+                    val success = ProductRepository.deleteProduct(productId)
+
+                    if (success) {
+                        Toast.makeText(requireContext(), "Product deleted with ID: $productId", Toast.LENGTH_SHORT).show()
+                        productIdToDeleteEditText.text.clear()
+                    } else {
+                        Toast.makeText(requireContext(), "Product not found", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Invalid product ID", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(requireContext(), "Please enter the product ID", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        return view
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DeleteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             DeleteFragment().apply {

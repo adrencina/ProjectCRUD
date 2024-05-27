@@ -28,7 +28,7 @@
                 android:id="@+id/img_card"
                 android:layout_width="350dp"
                 android:layout_height="250dp"
-                android:contentDescription="@string/item_que_se_muestra_en_home"
+                android:contentDescription="@string/imagen_producto"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
                 android:layout_margin="20dp"
