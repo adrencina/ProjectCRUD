@@ -4,10 +4,22 @@ import com.google.gson.annotations.SerializedName
 
 data class ProductResponse(
 
-    @SerializedName("message")
-    val message: List<String>?,
-
-    @SerializedName("status")
-    val status: String?
+    @SerializedName("id")
+    val id: Int,
+    @SerializedName("title")
+    val name: String,
+    @SerializedName("price")
+    val price: Int,
+    @SerializedName("description")
+    val description: String,
+    @SerializedName("images")
+    val images: List<String>,
 )
 
+
+
+//    @SerializedName("message")
+//    val message: List<String>?,
+//
+//    @SerializedName("status")
+//    val status: String?

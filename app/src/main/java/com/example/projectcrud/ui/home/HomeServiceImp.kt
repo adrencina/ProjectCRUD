@@ -13,7 +13,4 @@ class HomeServiceImp {
 
     private val serviceProduct = retrofit.create<HomeService>()
 
-    suspend fun getProducts(): Response<ProductResponse> {
-        return serviceProduct.getProducts()
-    }
 }

@@ -9,7 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_home"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="400dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
@@ -26,8 +26,8 @@
 
             <ImageView
                 android:id="@+id/img_card"
-                android:layout_width="350dp"
-                android:layout_height="250dp"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
                 android:contentDescription="@string/imagen_producto"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"

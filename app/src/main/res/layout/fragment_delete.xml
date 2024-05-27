@@ -20,7 +20,7 @@
                 android:id="@+id/et_id_delete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
+                android:autofillHints="id"
                 android:hint="@string/iddelete"
                 android:inputType="text" />
 
