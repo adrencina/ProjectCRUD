@@ -15,7 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:text="Productos Disponibles:"
+        android:text="@string/productos_disponibles"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="20sp"

@@ -1,11 +1,11 @@
 package com.example.projectcrud.ui.home
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.projectcrud.R
 import com.example.projectcrud.databinding.ItemRvHomeBinding
+
 import com.squareup.picasso.Picasso
 
 class ProductAdapter(private var products: List<ProductResponse>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
@@ -21,6 +21,7 @@ class ProductAdapter(private var products: List<ProductResponse>) : RecyclerView
 
     override fun getItemCount(): Int = products.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateProducts(newProducts: List<ProductResponse>) {
         products = newProducts
         notifyDataSetChanged()

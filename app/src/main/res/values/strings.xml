@@ -18,4 +18,5 @@
     <string name="delete_product">Delete Product</string>
     <string name="eliminar_producto">Eliminar Producto</string>
     <string name="imagen_producto">Imagen del producto</string>
+    <string name="productos_disponibles">Productos Disponibles:</string>
 </resources>
