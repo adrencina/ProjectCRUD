@@ -8,8 +8,4 @@ interface HomeService {
     @GET("/products")
     suspend fun getProducts(): Response<List<ProductResponse>>
 
-
-//    @GET("/products")
-//
-//    suspend fun getProducts(): Response<ProductResponse>
 }

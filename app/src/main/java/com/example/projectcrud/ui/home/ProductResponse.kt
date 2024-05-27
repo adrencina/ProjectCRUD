@@ -13,13 +13,5 @@ data class ProductResponse(
     @SerializedName("description")
     val description: String,
     @SerializedName("images")
-    val images: List<String>,
+    val images: String,
 )
-
-
-
-//    @SerializedName("message")
-//    val message: List<String>?,
-//
-//    @SerializedName("status")
-//    val status: String?

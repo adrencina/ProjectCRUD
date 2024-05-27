@@ -8,7 +8,7 @@ import com.example.projectcrud.R
 import com.example.projectcrud.databinding.ItemRvHomeBinding
 import com.squareup.picasso.Picasso
 
-class ProductAdapter(private val products: List<ProductResponse>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter(private var products: List<ProductResponse>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val binding = ItemRvHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -21,40 +21,23 @@ class ProductAdapter(private val products: List<ProductResponse>) : RecyclerView
 
     override fun getItemCount(): Int = products.size
 
+    fun updateProducts(newProducts: List<ProductResponse>) {
+        products = newProducts
+        notifyDataSetChanged()
+    }
     class ProductViewHolder(private val binding: ItemRvHomeBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(product: ProductResponse) {
             binding.textCard.text = product.name
             binding.priceCard.text = product.price.toString()
             binding.descriptionCard.text = product.description
-            Picasso.get().load(product.images.firstOrNull()).into(binding.imgCard)
+            binding.idCard.text = product.id.toString()
+
+            val images = product.images
+
+            Picasso.get().load(images).into(binding.imgCard)
         }
     }
 }
-
-//class ProductAdapter(private val products: List<ProductResponse> ) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-//        val binding = ItemRvHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-//        return ProductViewHolder(binding)
-//    }
-//
-//    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-//        holder.bind(products[position])
-//    }
-//
-//    override fun getItemCount(): Int = products.size
-//
-//
-//    class ProductViewHolder(private val binding: ItemRvHomeBinding) : RecyclerView.ViewHolder(binding.root) {
-//        fun bind(product: ProductResponse) {
-//            binding.textCard.text = product.name
-//            binding.priceCard.text = product.price.toString()
-//            binding.descriptionCard.text = product.description
-//            Picasso.get().load(product.images.firstOrNull()).into(binding.imgCard)
-//        }
-//    }
-//}
-
 
 
 //

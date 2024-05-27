@@ -19,24 +19,3 @@ class HomeRepository {
         return service.getProducts()
     }
 }
-
-
-
-//class HomeRepository(private val service: HomeServiceImp = HomeServiceImp()) {
-//    suspend fun getProducts(): Response<ProductResponse> {
-//        return service.getProducts()
-//    }
-//}
-
-//class HomeRepository {
-//    private val retrofit = Retrofit.Builder()
-//        .baseUrl("https://api.escuelajs.co/api/v1/")
-//        .addConverterFactory(GsonConverterFactory.create())
-//        .build()
-//
-//    private val service = retrofit.create(ProductService::class.java)
-//
-//    suspend fun getProducts(): Response<List<ProductResponse>> {
-//        return service.getProducts()
-//    }
-//}

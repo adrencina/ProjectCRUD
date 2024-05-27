@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectcrud.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -33,10 +34,15 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.rvHome.layoutManager = LinearLayoutManager(context)
+        productAdapter = ProductAdapter(emptyList())
+        binding.rvHome.adapter = productAdapter
+
+
         productViewModel.products.observe(viewLifecycleOwner) { products ->
             when (products) {
                 is StateHomeViewModel.Success -> {
-                    initRecyclerView(products.products)
+                    updateRecyclerView(products.products)
                 }
 
                 is StateHomeViewModel.Error -> {
@@ -50,10 +56,15 @@ class HomeFragment : Fragment() {
 
         }
 
-    private fun initRecyclerView(products: List<ProductResponse>) {
-        productAdapter = ProductAdapter(products)
-        binding.rvHome.adapter = productAdapter
+
+    private fun updateRecyclerView(products: List<ProductResponse>) {
+        productAdapter.updateProducts(products) // Actualiza los productos en el adapter
     }
+
+//    private fun initRecyclerView(products: List<ProductResponse>) {
+//        productAdapter = ProductAdapter(products)
+//        binding.rvHome.adapter = productAdapter
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()
