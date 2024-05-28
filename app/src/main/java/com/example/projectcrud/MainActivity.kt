@@ -32,10 +32,18 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
-                R.id.nav_gallery,
-                R.id.nav_slideshow,
-                R.id.addFragment,
-                R.id.deleteFragment
+                R.id.nav_add,
+                R.id.nav_update,
+                R.id.nav_delete
+//                R.id.nav_home,
+//                R.id.nav_gallery,
+//                R.id.nav_slideshow,
+//                R.id.addFragment,
+//                R.id.deleteFragment,
+//                R.id.nav_home,
+//                R.id.nav_add,
+//                R.id.nav_update,
+//                R.id.nav_delete
             ),
             drawerLayout
         )

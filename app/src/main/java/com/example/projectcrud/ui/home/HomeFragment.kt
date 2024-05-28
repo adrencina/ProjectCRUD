@@ -36,6 +36,7 @@ class HomeFragment : Fragment() {
 
         productViewModel.products.observe(viewLifecycleOwner) { products ->
             productAdapter.products = products
+            productAdapter.updateProducts(products)
             productAdapter.notifyDataSetChanged()
         }
 

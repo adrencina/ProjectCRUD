@@ -5,15 +5,25 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
+
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.projectcrud.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_nav_home_to_nav_slideshow"
-            app:destination="@id/nav_slideshow" />
+            android:id="@+id/action_nav_home_to_deleteFragment2"
+            app:destination="@id/deleteFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_add2"
+            app:destination="@id/nav_add" />
+        <action
+            android:id="@+id/action_nav_home_to_deleteFragment3"
+            app:destination="@id/deleteFragment" />
     </fragment>
+
+
+
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -25,21 +35,11 @@
         android:id="@+id/nav_slideshow"
         android:name="com.example.projectcrud.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" >
-        <action
-            android:id="@+id/action_nav_slideshow_to_addFragment"
-            app:destination="@id/addFragment" />
-        <action
-            android:id="@+id/action_nav_slideshow_to_deleteFragment"
-            app:destination="@id/deleteFragment" />
-        <action
-            android:id="@+id/action_nav_slideshow_to_nav_home"
-            app:destination="@id/nav_home" />
-    </fragment>
+        tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.example.projectcrud.AddFragment"
-        android:label="fragment_add"
+        android:name="com.example.projectcrud.ui.add.AddFragment"
+        android:label="nav_add"
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_nav_home"
@@ -52,6 +52,9 @@
         tools:layout="@layout/fragment_delete" >
         <action
             android:id="@+id/action_deleteFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_deleteFragment_to_nav_home2"
             app:destination="@id/nav_home" />
     </fragment>
 </navigation>

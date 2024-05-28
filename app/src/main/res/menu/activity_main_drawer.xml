@@ -13,8 +13,13 @@
             android:icon="@drawable/iconadd"
             android:title="Add" />
         <item
+            android:id="@+id/nav_update"
+            android:icon="@drawable/update"
+            android:title="Update" />
+        <item
             android:id="@+id/nav_delete"
             android:icon="@drawable/delete"
             android:title="Delete" />
+
     </group>
 </menu>
