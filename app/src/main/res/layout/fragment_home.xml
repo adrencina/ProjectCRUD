@@ -4,12 +4,11 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/purple_200">
+    android:background="@color/tertiary">
 
     <TextView
         android:id="@+id/text_home"
@@ -17,6 +16,7 @@
         android:layout_height="wrap_content"
         android:text="@string/productos_disponibles"
         android:textAlignment="center"
+        android:textColor="@color/quinary"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,6 +26,7 @@
         android:id="@+id/searchEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/quinary"
         android:layout_marginTop="20dp"
         android:hint="Buscar por ID"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +37,8 @@
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:textColor="@color/quinary"
         android:text="Buscar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
@@ -64,48 +67,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-<!--<androidx.constraintlayout.widget.ConstraintLayout-->
-<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:background="@color/white"-->
-<!--    tools:context=".ui.home.HomeFragment">-->
-
-
-
-<!--    <SearchView-->
-<!--        android:id="@+id/sv_home"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:queryHint="Buscar..."-->
-<!--        android:layout_margin="20dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/rv_home"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/text_home"-->
-<!--        android:background="@color/purple_200"-->
-<!--        />-->
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rv_home"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="500dp"-->
-<!--        app:layoutManager="LinearLayoutManager"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:layout_marginEnd="20dp"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/text_home"-->
-<!--        android:background="@color/purple_200"-->
-<!--        tools:listitem="@layout/item_rv_home"/>-->
-
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

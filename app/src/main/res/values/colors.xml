@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    colores app    -->
+
+    <color name="primary">#0460D9</color>
+    <color name="secondary">#327AD9</color>
+    <color name="tertiary">#5E9FF2</color>
+    <color name="cuaternary">#89ABD9</color>
+    <color name="quinary">#F2F2F2</color>
+
+
 </resources>

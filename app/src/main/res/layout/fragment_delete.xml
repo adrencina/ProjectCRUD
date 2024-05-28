@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/tertiary"
     android:padding="16dp">
 
     <EditText
         android:id="@+id/idEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/quinary"
         android:hint="Product ID"
         android:inputType="number" />
 
@@ -17,46 +19,7 @@
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/quinary"
         android:text="Delete Product"
         android:layout_gravity="center" />
 </LinearLayout>
-
-
-
-
-
-<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".DeleteFragment">-->
-
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:padding="16dp"-->
-<!--        tools:ignore="UselessParent">-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="vertical">-->
-
-<!--            <EditText-->
-<!--                android:id="@+id/et_id_delete"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:autofillHints="id"-->
-<!--                android:hint="@string/iddelete"-->
-<!--                android:inputType="text" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btn_delete_product"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/eliminar_producto" />-->
-
-<!--        </LinearLayout>-->
-<!--    </ScrollView>-->
-
-<!--</FrameLayout>-->
