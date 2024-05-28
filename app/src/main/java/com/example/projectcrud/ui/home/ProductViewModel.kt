@@ -8,16 +8,29 @@ class ProductViewModel : ViewModel() {
     val products: LiveData<List<Product>> = _products
 
     init {
-        // Initialize with some default products
+        // productos por defecto
         _products.value = listOf(
             Product(
-                1, "Product 1", "Description 1", "10.0",
-                listOf("https://example.com/image1.jpg")
+                1, "Classic Comfort Drawstring Joggers", "Experience the perfect blend.", "79",
+                listOf("https://i.imgur.com/ZKGofuB.jpeg")
             ),
             Product(
-                2, "Product 2", "Description 2", "20.0",
-                listOf("https://example.com/image2.jpg")
+                6, "Classic Comfort Fit Joggers", "Discover the perfect blend of style.", "25",
+                listOf("https://i.imgur.com/mp3rUty.jpeg")
+            ),
+            Product(
+                8, "Classic Navy Blue Baseball Cap", "Step out in style with this sleek navy blue baseball cap.", "75",
+                listOf("https://i.imgur.com/R3iobJA.jpeg")
+            ),
+            Product(
+                3, "Classic Blue Baseball Cap", "Top off your casual look with our Classic Cap.", "65",
+                listOf("https://i.imgur.com/wXuQ7bm.jpeg")
+            ),
+            Product(
+                35, "Classic Red Baseball Cap", "Elevate your casual wardrobe with this timeless red baseball cap.", "95",
+                listOf("https://i.imgur.com/cBuLvBi.jpeg")
             )
+
         )
     }
 
