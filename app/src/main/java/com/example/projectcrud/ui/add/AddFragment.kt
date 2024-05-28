@@ -19,10 +19,10 @@ class AddFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_add, container, false)
 
-        val productNameEditText: EditText = view.findViewById(R.id.et_product_name)
-        val productDescriptionEditText: EditText = view.findViewById(R.id.et_product_description)
-        val productPriceEditText: EditText = view.findViewById(R.id.et_product_price)
-        val addProductButton: Button = view.findViewById(R.id.btn_add_product)
+        val productNameEditText: EditText = view.findViewById(R.id.nameEditText)
+        val productDescriptionEditText: EditText = view.findViewById(R.id.descriptionEditText)
+        val productPriceEditText: EditText = view.findViewById(R.id.priceEditText)
+        val addProductButton: Button = view.findViewById(R.id.addButton)
 
         addProductButton.setOnClickListener {
             val productName = productNameEditText.text.toString().trim()

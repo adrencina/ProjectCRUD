@@ -1,53 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <ScrollView
+    <EditText
+        android:id="@+id/idEditText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:hint="Product ID"
+        android:inputType="number" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Name" />
 
-            <EditText
-                android:id="@+id/et_product_name"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:autofillHints=""
-                android:hint="@string/nombre_del_producto"
-                android:inputType="text" />
+    <EditText
+        android:id="@+id/priceEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Price"
+        android:inputType="number" />
 
-            <EditText
-                android:id="@+id/et_product_description"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:autofillHints=""
-                android:hint="@string/descripcion"
-                android:inputType="textMultiLine"
-                android:lines="3"
-                android:maxLines="5" />
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Description" />
 
-            <EditText
-                android:id="@+id/et_product_price"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:autofillHints=""
-                android:hint="@string/precio"
-                android:inputType="numberDecimal" />
+    <EditText
+        android:id="@+id/imageEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Image URL" />
 
-            <Button
-                android:id="@+id/btn_add_product"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/añadir" />
-
-        </LinearLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Product"
+        android:layout_gravity="center" />
+</LinearLayout>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:padding="16dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_product_name"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:autofillHints=""-->
+<!--                android:hint="@string/nombre_del_producto"-->
+<!--                android:inputType="text" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_product_description"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="90dp"-->
+<!--                android:autofillHints=""-->
+<!--                android:hint="@string/descripcion"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:lines="3"-->
+<!--                android:maxLines="5" />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_product_price"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:autofillHints=""-->
+<!--                android:hint="@string/precio"-->
+<!--                android:inputType="numberDecimal" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_add_product"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/añadir" />-->
+
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

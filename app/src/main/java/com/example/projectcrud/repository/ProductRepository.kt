@@ -5,6 +5,8 @@ import com.example.projectcrud.model.Product
 object ProductRepository {
     private val products = mutableListOf<Product>()
 
+    fun getAllProducts(): List<Product> = products
+
     fun getProducts(): List<Product> {
         return products
     }
@@ -28,6 +30,12 @@ object ProductRepository {
         val initialSize = products.size
         products.removeAll { it.id == id }
         return products.size < initialSize
+    }
+
+    fun searchProducts(query: String): List<Product> {
+        return products.filter {
+            it.name.contains(query, true) || it.id.toString() == query
+        }
     }
 
 }
